@@ -1,0 +1,21 @@
+{
+  "name": "gestao-de-frotas",
+  "version": "1.0.0",
+  "description": "Sistema de gestão operacional de frotas - Paraferro",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "seed": "node server/db/seed.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "sql.js": "^1.11.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestao de Frotas</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="app">
+    <section id="boot-screen" class="screen screen-center">
+      <div class="panel boot-panel">
+        <p class="eyebrow">Gestor</p>
+        <h1>Gestao de Frotas</h1>
+        <p id="boot-message" class="muted">Validando sessao...</p>
+      </div>
+    </section>
+
+    <section id="login-screen" class="screen screen-center hidden" aria-labelledby="login-title">
+      <div class="panel auth-panel">
+        <div class="brand-block">
+          <p class="eyebrow">Painel do gestor</p>
+          <h1 id="login-title">Acesse o sistema</h1>
+          <p class="muted">
+            Login, sessao persistida e navegacao base para Dashboard, Veiculos,
+            Motoristas, Checklists e Ocorrencias.
+          </p>
+        </div>
+
+        <form id="login-form" class="stack" autocomplete="on">
+          <label class="field">
+            <span>Usuario</span>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              autocomplete="username"
+              placeholder="admin"
+              required
+            >
+          </label>
+
+          <label class="field">
+            <span>Senha</span>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="admin123"
+              required
+            >
+          </label>
+
+          <p id="login-error" class="feedback feedback-error hidden" role="alert"></p>
+
+          <button id="login-submit" type="submit" class="button button-primary">
+            Entrar no gestor
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="manager-shell" class="screen hidden">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <p class="eyebrow">Gestor</p>
+          <h2>Gestao de Frotas</h2>
+          <p class="muted">Base minima do frontend oficial em `public/`.</p>
+        </div>
+
+        <nav id="nav-menu" class="nav-menu" aria-label="Modulos principais"></nav>
+
+        <div class="sidebar-bottom">
+          <p class="muted small">Sessao autenticada com JWT.</p>
+        </div>
+      </aside>
+
+      <div class="shell-main">
+        <header class="topbar">
+          <div class="topbar-copy">
+            <p id="page-section" class="eyebrow">Gestor autenticado</p>
+            <h1 id="page-title">Dashboard</h1>
+          </div>
+
+          <div class="topbar-actions">
+            <div class="user-card">
+              <strong id="user-name">Usuario</strong>
+              <span id="user-meta" class="muted">Role</span>
+            </div>
+
+            <button id="logout-button" type="button" class="button button-secondary">
+              Sair
+            </button>
+          </div>
+        </header>
+
+        <main id="view-root" class="view-root" tabindex="-1"></main>
+      </div>
+    </section>
+  </div>
+
+  <noscript>
+    <div class="noscript-warning">Ative JavaScript para usar o frontend do gestor.</div>
+  </noscript>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>
